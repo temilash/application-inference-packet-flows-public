@@ -1,0 +1,48 @@
+{
+  "task": "task1_static",
+  "source_dataset": "data/processed_closed",
+  "min_class_count": 10,
+  "split_fractions": {
+    "train": 0.6,
+    "validation": 0.2,
+    "test": 0.2
+  },
+  "split_seed": 2026,
+  "files": {
+    "train_features": "train_features.csv",
+    "train_labels": "train_labels.csv",
+    "validation_features": "validation_features.csv",
+    "validation_labels": "validation_labels.csv",
+    "test_features": "test_features.csv",
+    "sample_submission": "sample_submission.csv"
+  },
+  "private_files": {
+    "test_labels_private": "data/challenge_private/task1_static/test_labels_private.csv"
+  },
+  "label_counts": {
+    "train": {
+      "facebook": 8,
+      "google": 98,
+      "instagram": 14,
+      "mozilla": 31,
+      "x": 55,
+      "youtube": 41
+    },
+    "validation": {
+      "facebook": 3,
+      "google": 33,
+      "instagram": 5,
+      "mozilla": 10,
+      "x": 18,
+      "youtube": 14
+    },
+    "test": {
+      "facebook": 2,
+      "google": 33,
+      "instagram": 4,
+      "mozilla": 10,
+      "x": 19,
+      "youtube": 13
+    }
+  }
+}

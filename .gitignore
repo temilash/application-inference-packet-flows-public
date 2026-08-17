@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+evaluation_script.zip
+challenge_config.zip

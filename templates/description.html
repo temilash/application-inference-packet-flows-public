@@ -1,0 +1,152 @@
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1f2937; line-height: 1.65;">
+  <div style="border: 1px solid #cfe2e4; border-radius: 10px; background: linear-gradient(135deg, #f7fbfb 0%, #eef8f6 100%); padding: 22px 24px; margin: 0 0 28px;">
+    <h2 style="margin: 0 0 16px; color: #17202a; font-size: 22px; line-height: 1.25;">Challenge at a Glance</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
+      <div style="background: #ffffff; border: 1px solid #d5e1e6; border-radius: 8px; padding: 14px 16px; min-height: 118px;">
+        <div style="font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #64748b; margin-bottom: 8px;">Primary Task</div>
+        <div style="font-size: 22px; line-height: 1.2; font-weight: 700; color: #087a75;">Flow classification</div>
+        <div style="font-size: 14px; color: #475569; margin-top: 8px;">Infer applications from encrypted packet-flow statistics.</div>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #d5e1e6; border-radius: 8px; padding: 14px 16px; min-height: 118px;">
+        <div style="font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #64748b; margin-bottom: 8px;">Main Metric</div>
+        <div style="font-size: 22px; line-height: 1.2; font-weight: 700; color: #087a75;">Macro F1</div>
+        <div style="font-size: 14px; color: #475569; margin-top: 8px;">Balances performance across minority and majority classes.</div>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #d5e1e6; border-radius: 8px; padding: 14px 16px; min-height: 118px;">
+        <div style="font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #64748b; margin-bottom: 8px;">Leakage Control</div>
+        <div style="font-size: 22px; line-height: 1.2; font-weight: 700; color: #087a75;">No DNS/SNI/IP</div>
+        <div style="font-size: 14px; color: #475569; margin-top: 8px;">Direct identifiers and payload contents are removed.</div>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #d5e1e6; border-radius: 8px; padding: 14px 16px; min-height: 118px;">
+        <div style="font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #64748b; margin-bottom: 8px;">Two Tasks</div>
+        <div style="font-size: 22px; line-height: 1.2; font-weight: 700; color: #087a75;">Static + realtime</div>
+        <div style="font-size: 14px; color: #475569; margin-top: 8px;">Full-flow and first-5-packet inference, 50 points each.</div>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #d5e1e6; border-radius: 8px; padding: 14px 16px; min-height: 118px;">
+        <div style="font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #64748b; margin-bottom: 8px;">Awards</div>
+        <div style="font-size: 22px; line-height: 1.2; font-weight: 700; color: #087a75;">USD 1,000</div>
+        <div style="font-size: 14px; color: #475569; margin-top: 8px;">Prize money and winner certificates are planned.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="border-bottom: 1px solid #d7dee5; padding-bottom: 8px; margin: 26px 0 14px; color: #17202a;">Problem Statement</h2>
+
+  <p>
+    Modern mobile networks carry traffic from video streaming, social networking, web browsing, messaging, map services, notification processing, and many other applications over shared encrypted network paths. These applications have different bandwidth, latency, and reliability requirements, but direct application identifiers are often unavailable because payloads are encrypted and privacy-sensitive metadata is removed.
+  </p>
+
+  <p>
+    The task is to build an AI/ML method that estimates the application associated with each communication flow using only statistical packet-flow features. Participants must infer the application without relying on payload contents, IP addresses, DNS query names, TLS SNI, HTTP Host values, URLs, or domain strings.
+  </p>
+
+  <p>
+    This problem is important for application-aware network management, including QoS control, traffic prioritization, network slicing, congestion mitigation, anomaly detection, and resource-efficient real-time operation.
+  </p>
+
+  <h2 style="border-bottom: 1px solid #d7dee5; padding-bottom: 8px; margin: 30px 0 14px; color: #17202a;">Objective</h2>
+
+  <p>
+    The objective of this challenge is to develop a model that predicts application labels for encrypted mobile traffic flows from flow-level features. Participants will design methods that use traffic volume, direction, packet size, inter-arrival time, burstiness, flow duration, and related statistics.
+  </p>
+
+  <p>
+    The challenge emphasizes practical deployment in real networks, not only classification accuracy. Important perspectives include early identification from the first few packets, robustness under class imbalance, lightweight model design, overfitting prevention, and clear handling of uncertain predictions.
+  </p>
+
+  <h2 style="border-bottom: 1px solid #d7dee5; padding-bottom: 8px; margin: 30px 0 14px; color: #17202a;">Approach</h2>
+
+  <p>
+    Participants may freely design the feature processing and learning pipeline. Possible components include feature selection, feature transformation, normalization, dimensionality reduction, model selection, class-imbalance handling, and generalization methods for applications with few samples.
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 14px 0 24px;">
+    <div style="border: 1px solid #d7dee5; border-radius: 8px; padding: 14px 16px; background: #ffffff;">
+      <strong>Flow-statistics approach</strong>
+      <p style="margin: 8px 0 0;">Use packet counts, byte counts, traffic direction, duration, packet-size distributions, and inter-arrival-time statistics.</p>
+    </div>
+    <div style="border: 1px solid #d7dee5; border-radius: 8px; padding: 14px 16px; background: #ffffff;">
+      <strong>Time-series approach</strong>
+      <p style="margin: 8px 0 0;">Model packet-size sequences, direction sequences, timing patterns, and early-flow behavior when available.</p>
+    </div>
+    <div style="border: 1px solid #d7dee5; border-radius: 8px; padding: 14px 16px; background: #ffffff;">
+      <strong>Hybrid approach</strong>
+      <p style="margin: 8px 0 0;">Combine domain-knowledge-based feature engineering with machine learning or sequence-aware models.</p>
+    </div>
+  </div>
+
+  <h2 style="border-bottom: 1px solid #d7dee5; padding-bottom: 8px; margin: 30px 0 14px; color: #17202a;">Tasks</h2>
+
+  <p>
+    This challenge has two scored tasks with the same target application labels: <code>facebook</code>, <code>google</code>, <code>instagram</code>, <code>mozilla</code>, <code>x</code>, and <code>youtube</code>.
+  </p>
+
+  <table style="width: 100%; border-collapse: collapse; margin: 14px 0 24px; font-size: 14px;">
+    <thead>
+      <tr style="background: #f1f5f7;">
+        <th style="text-align: left; border: 1px solid #d7dee5; padding: 10px;">Task</th>
+        <th style="text-align: left; border: 1px solid #d7dee5; padding: 10px;">Goal</th>
+        <th style="text-align: left; border: 1px solid #d7dee5; padding: 10px;">Dataset directory</th>
+        <th style="text-align: left; border: 1px solid #d7dee5; padding: 10px;">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #d7dee5; padding: 10px; font-weight: 700;">Task 1</td>
+        <td style="border: 1px solid #d7dee5; padding: 10px;">Static application classification using full-flow statistical features</td>
+        <td style="border: 1px solid #d7dee5; padding: 10px;"><code>dataset/task1_static/</code></td>
+        <td style="border: 1px solid #d7dee5; padding: 10px;">50 points</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #d7dee5; padding: 10px; font-weight: 700;">Task 2</td>
+        <td style="border: 1px solid #d7dee5; padding: 10px;">Real-time application classification using features from only the first 5 packets of each flow</td>
+        <td style="border: 1px solid #d7dee5; padding: 10px;"><code>dataset/task2_realtime_prefix5/</code></td>
+        <td style="border: 1px solid #d7dee5; padding: 10px;">50 points</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 style="border-bottom: 1px solid #d7dee5; padding-bottom: 8px; margin: 30px 0 14px; color: #17202a;">Dataset</h2>
+
+  <p>
+    The source data is a packet capture of approximately 44 minutes of traffic from a single user equipment. The organizers extract flow-level features from the packet trace and provide them to participants in CSV format.
+  </p>
+
+  <p>
+    Each task directory contains public training data, public validation data, private-evaluation features, and a sample submission template.
+  </p>
+
+  <ul style="margin-top: 8px;">
+    <li><code>train_features.csv</code>: flow-level features for training</li>
+    <li><code>train_labels.csv</code>: ground-truth labels for training flows</li>
+    <li><code>validation_features.csv</code>: flow-level features for validation</li>
+    <li><code>validation_labels.csv</code>: ground-truth labels for validation flows</li>
+    <li><code>test_features.csv</code>: flow-level features for final evaluation</li>
+    <li><code>sample_submission.csv</code>: submission template</li>
+  </ul>
+
+  <div style="border-left: 4px solid #087a75; background: #f6faf9; padding: 14px 16px; margin: 16px 0 22px;">
+    <strong>Dataset access:</strong>
+    the participant-facing dataset is provided in the public repository
+    <a href="https://github.com/FG-AI4H/application-inference-packet-flows-public" target="_blank" rel="noopener noreferrer">FG-AI4H/application-inference-packet-flows-public</a>
+    under <code>dataset/</code>. Final test labels are held only by the organizers and are not included in the participant-facing files.
+  </div>
+
+  <p>
+    The feature files include information such as flow duration, transport protocol, server-side port, uplink/downlink packet counts, uplink/downlink byte counts, packet-size statistics, inter-arrival-time statistics, burst counts, and uplink/downlink ratios.
+  </p>
+
+  <p>
+    The following information is not included in the participant feature files: IP addresses, DNS query names, TLS SNI, HTTP Host values, URLs, domain strings, or payload contents.
+  </p>
+
+  <h2 style="border-bottom: 1px solid #d7dee5; padding-bottom: 8px; margin: 30px 0 14px; color: #17202a;">Conditions</h2>
+
+  <ul>
+    <li>Ground-truth labels for final evaluation data must not be used for training or model selection.</li>
+    <li>Full-flow features from Task 1 must not be used to generate Task 2 predictions.</li>
+    <li>Participants must not attempt to recover direct identifiers such as DNS names, TLS SNI, HTTP Host values, IP addresses, URLs, domain strings, or payload contents.</li>
+    <li>If information other than the provided feature files is used, it must be clearly described in the submitted technical report.</li>
+    <li>The organizers may inspect submitted code, reports, and prediction files to confirm compliance with these rules.</li>
+  </ul>
+</div>

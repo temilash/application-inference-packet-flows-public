@@ -1,0 +1,29 @@
+<h2>Evaluation Metric</h2>
+
+<p>
+The primary metric is macro F1. Macro F1 gives equal weight to each application class and is therefore more appropriate than accuracy alone for this dataset, where the number of flows differs across classes.
+</p>
+
+<p>
+Accuracy is reported as a secondary diagnostic metric. The leaderboard is ordered by the total score.
+</p>
+
+<h2>Scoring</h2>
+
+<p>
+The official score is out of 100 points. Task 1 and Task 2 each contribute up to 50 points:
+</p>
+
+<pre><code>Task 1 Score = 50 * macro_f1(task1_static)
+Task 2 Score = 50 * macro_f1(task2_realtime_prefix5)
+Total Score  = Task 1 Score + Task 2 Score</code></pre>
+
+<p>
+The evaluation script verifies that every required <code>flow_id</code> is present, that no unknown <code>flow_id</code> is submitted, and that predicted labels belong to the allowed label set.
+</p>
+
+<h2>Phases</h2>
+
+<p>
+The Validation Phase evaluates predictions against the public validation split. It is intended for checking that the submission format and evaluation pipeline work as expected. The Final Test Phase evaluates predictions against organizer-held test labels and determines the official ranking.
+</p>

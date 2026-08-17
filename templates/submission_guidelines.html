@@ -1,0 +1,43 @@
+<h2>Submission Format</h2>
+
+<p>
+Submit predictions for both tasks in one file. The recommended format is a JSON file with two top-level objects, <code>task1_static</code> and <code>task2_realtime_prefix5</code>. Each object maps <code>flow_id</code> to the predicted application label.
+</p>
+
+<pre><code>{
+  "task1_static": {
+    "flow_000007": "google",
+    "flow_000026": "mozilla"
+  },
+  "task2_realtime_prefix5": {
+    "flow_000007": "google",
+    "flow_000026": "x"
+  }
+}</code></pre>
+
+<p>
+Alternatively, participants may submit a ZIP file containing exactly two CSV files:
+</p>
+
+<pre><code>task1_static.csv
+task2_realtime_prefix5.csv</code></pre>
+
+<p>
+Each CSV file must have the following two columns:
+</p>
+
+<pre><code>flow_id,app
+flow_000007,google
+flow_000026,mozilla</code></pre>
+
+<h2>Allowed Labels</h2>
+
+<p>
+Predicted labels must be one of: <code>facebook</code>, <code>google</code>, <code>instagram</code>, <code>mozilla</code>, <code>x</code>, or <code>youtube</code>.
+</p>
+
+<h2>Required Supporting Materials</h2>
+
+<p>
+Participants are expected to retain and submit, when requested by the organizers, the source code used for training and inference and a short technical report describing the selected features, model architecture, training procedure, validation results, treatment of class imbalance, and computational cost.
+</p>
